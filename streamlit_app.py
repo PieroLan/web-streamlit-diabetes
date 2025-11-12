@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 MODEL_PATH = Path("artefactos") / "v1/pipeline_LRN.joblib"
 modelo = joblib.load(MODEL_PATH)
 
-st.title("🤖 Predicción de Riesgo de Salud")
+st.title("🤖 Predicción de Diabetes 🩺")
 st.write("Basado en variables de hábitos y condiciones personales (Cuestionario QS).")
 
 # Tabs
@@ -30,19 +30,19 @@ with tab1:
     # Entrada de datos según tus variables
     col1, col2 = st.columns(2)
     with col1:
-        QS23 = st.slider("Edad (años)", 10, 100, 30)
-        QSSEXO = st.selectbox("Sexo", ["Masculino", "Femenino"])
-        QS207C = st.slider("Edad en que tomó por primera vez bebidas alcohólicas", 5, 60, 18)
-        QS208 = st.selectbox("¿Ha consumido alcohol en los últimos 12 meses?", ["Sí", "No"])
-        QS213C = st.slider("Días a la semana que consume frutas", 0, 7, 3)
-        QS219C = st.slider("Días a la semana que consume verduras", 0, 7, 3)
+        QS23 = st.slider("Edad (años) 🎂", 10, 100, 30)
+        QSSEXO = st.selectbox("Sexo ⚤", ["Masculino", "Femenino"])
+        QS207C = st.slider("Edad en que tomó por primera vez bebidas alcohólicas 🍺", 5, 60, 18)
+        QS208 = st.selectbox("¿Ha consumido alcohol en los últimos 12 meses? 🍺", ["Sí", "No"])
+        QS213C = st.slider("Días a la semana que consume frutas 🍎", 0, 7, 3)
+        QS219C = st.slider("Días a la semana que consume verduras 🥦", 0, 7, 3)
 
     with col2:
-        QS900 = st.slider("Peso (kg)", 30.0, 150.0, 70.0)
-        QS901 = st.slider("Talla (cm)", 120.0, 210.0, 170.0)
-        QS907 = st.slider("Perímetro abdominal (cm)", 50.0, 150.0, 90.0)
-        QS102 = st.selectbox("¿Tiene hipertensión?", ["Sí", "No"])
-        QS500 = st.selectbox("¿Tiene tos con flema?", ["Sí", "No"])
+        QS900 = st.slider("Peso (kg) 💪", 30.0, 150.0, 70.0)
+        QS901 = st.slider("Talla (cm) 📏", 120.0, 210.0, 170.0)
+        QS907 = st.slider("Perímetro abdominal (cm) 📏", 50.0, 150.0, 90.0)
+        QS102 = st.selectbox("¿Tiene hipertensión? 🩺", ["Sí", "No"])
+        QS500 = st.selectbox("¿Tiene tos con flema? 😣", ["Sí", "No"])
 
     # Crear dataframe de entrada
     entrada = pd.DataFrame([{
@@ -64,7 +64,7 @@ with tab1:
         try:
             pred = modelo.predict(entrada)[0]
             prob = modelo.predict_proba(entrada)[0][1]
-            resultado = "🩺 Tiene diabetes" if pred == 1 else "✅ No tiene diabetes"
+            resultado = "✅ Tiene diabetes" if pred == 1 else "❌ No tiene diabetes"
 
             st.success(f"**Resultado:** {resultado}")
             st.write(f"Probabilidad estimada: **{prob:.2f}**")
