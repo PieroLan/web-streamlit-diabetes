@@ -14,7 +14,8 @@ MODEL_PATH = Path("artefactos") / "v1/pipeline_LRN.joblib"
 modelo = joblib.load(MODEL_PATH)
 
 st.title("🤖 Predicción de Diabetes 🩺")
-st.write("Basado en variables de hábitos y condiciones personales (Cuestionario QS).")
+st.write("Basado en variables de hábitos y condiciones personales")
+st.write("✍Autores: Ing. Piero Lanche - Ing. Joel Rivera - Ing. Andres Chavarri")
 
 # Tabs
 tab1, tab2, tab3 = st.tabs(["🧪 Predicción", "📊 Análisis del modelo", "📈 Gráficos interactivos"])
