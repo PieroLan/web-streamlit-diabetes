@@ -18,7 +18,9 @@ st.write("Basado en variables de hábitos y condiciones personales")
 st.write("✍Autores: Ing. Piero Lanche - Ing. Joel Rivera - Ing. Andres Chavarri")
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["🧪 Predicción", "📊 Análisis del modelo", "📈 Gráficos interactivos"])
+# tab1, tab2, tab3 = st.tabs(["🧪 Predicción", "📊 Análisis del modelo", "📈 Gráficos interactivos"])
+
+tab1, tab3 = st.tabs(["🧪 Predicción", "📈 Gráficos interactivos"])
 
 # =====================================================
 # --- TAB 1: Predicción individual
