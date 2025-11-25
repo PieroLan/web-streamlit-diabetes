@@ -75,20 +75,20 @@ with tab1:
 # =====================================================
 # --- TAB 2: Análisis del modelo
 # =====================================================
-with tab2:
-    st.subheader("Análisis del modelo")
+# with tab2:
+#     st.subheader("Análisis del modelo")
 
-    try:
-        coef_df = pd.DataFrame({
-            'Variable': modelo.feature_names_in_,
-            'Peso': modelo.coef_[0]
-        }).sort_values(by='Peso', key=abs, ascending=False)
+#     try:
+#         coef_df = pd.DataFrame({
+#             'Variable': modelo.feature_names_in_,
+#             'Peso': modelo.coef_[0]
+#         }).sort_values(by='Peso', key=abs, ascending=False)
 
-        st.write("Importancia de cada variable en la predicción")
-        st.bar_chart(coef_df.set_index("Variable"))
-    except Exception:
-        st.warning("No se pudieron obtener los coeficientes del modelo. "
-                   "Esto puede ocurrir si es un modelo no lineal (p. ej., árbol o random forest).")
+#         st.write("Importancia de cada variable en la predicción")
+#         st.bar_chart(coef_df.set_index("Variable"))
+#     except Exception:
+#         st.warning("No se pudieron obtener los coeficientes del modelo. "
+#                    "Esto puede ocurrir si es un modelo no lineal (p. ej., árbol o random forest).")
 
 # =====================================================
 # --- TAB 3: Gráficos interactivos
